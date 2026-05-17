@@ -35,7 +35,7 @@ unsigned long lastReadTime = 0;
 // Threshold
 float weightThreshold = 0.1;
 
-// 🔥 DROWSY FLAG
+// DROWSY FLAG
 bool drowsyDetected = false;
 
 void setup() {
@@ -69,7 +69,7 @@ void setup() {
 
 void loop() {
 
-  // 🔥 LISTEN FROM PYTHON (DROWSY)
+  // LISTEN FROM PYTHON (DROWSY)
   /*
   if (Serial.available()) {
     String msg = Serial.readStringUntil('\n');
@@ -87,7 +87,7 @@ void loop() {
       // digitalWrite(IN2, LOW);
 
       // BUZZER ON
-      // 🔊 INTERVAL BUZZER
+      // INTERVAL BUZZER
       for (int i = 0; i < 2; i++) {
         digitalWrite(buzzer, HIGH);
         delay(300);
@@ -147,7 +147,7 @@ void loop() {
         Serial.println("START");   // already correct
         systemON = true;
 
-        drowsyDetected = false; // 🔥 reset
+        drowsyDetected = false; // reset
 
         digitalWrite(buzzer, LOW);
 
@@ -178,7 +178,7 @@ void loop() {
       Serial.println("STOP");   // already correct
 
       systemON = false;
-      drowsyDetected = false;   // 🔥 reset
+      drowsyDetected = false;   // reset
 
       digitalWrite(relayPin, LOW);
       digitalWrite(IN1, LOW);
@@ -193,7 +193,7 @@ void loop() {
 
   lastButtonState = currentButton;
 
-  // 🔥 IF DROWSY → STOP NORMAL DISPLAY
+  // IF DROWSY STOP NORMAL DISPLAY
   /*
   if (drowsyDetected) {
     return;
